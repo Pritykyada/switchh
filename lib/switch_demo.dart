@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class SwitchDemo extends StatefulWidget {
@@ -23,6 +24,26 @@ class _SwitchDemoState extends State<SwitchDemo> {
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Switch(
+            thumbColor: MaterialStateProperty.all(Colors.blueGrey),
+            //focusColor: Colors.green,
+            //hoverColor: Colors.black,
+            activeColor: Colors.grey.shade900,
+            activeTrackColor: Colors.blue,
+            splashRadius: 56,
+            //autofocus: true,
+            //overlayColor: MaterialStateProperty.all(Colors.blue),
+            activeThumbImage: const NetworkImage("https://tse4.mm.bing.net/th?id=OIP.olwZgnOgcvyaYI7gGjv_gAHaHZ&pid=Api&P=0&h=180",),
+            dragStartBehavior: DragStartBehavior.down,
+            inactiveThumbColor: Colors.green,
+            trackOutlineWidth: MaterialStateProperty.all(2),
+            thumbIcon: MaterialStateProperty.all(const Icon(Icons.add)),
+            trackColor: MaterialStateProperty.all(Colors.yellow),
+            inactiveTrackColor: Colors.pink,
+            mouseCursor: SystemMouseCursors.alias,//web property
+            trackOutlineColor: MaterialStateProperty.all(Colors.teal),
+            materialTapTargetSize: MaterialTapTargetSize.padded,
+            focusNode:FocusNode(debugLabel: "hyyyyyy"),
+            //thumbColor: MaterialStateColor.resolveWith((states) => ),
             value: isSwitch,
             onChanged: onTabSwitch,
             // onChanged: (value) => onTapSwitch(value),
@@ -42,11 +63,11 @@ class _SwitchDemoState extends State<SwitchDemo> {
                     width: isSwitch ? 2 : 4),
                 gradient: isSwitch
                     ? const LinearGradient(
-                        colors: [Colors.white, Color.fromRGBO(56, 20, 90, 0.4)])
+                    colors: [Colors.white, Color.fromRGBO(56, 20, 90, 0.4)])
                     : const LinearGradient(colors: [
-                        Color.fromRGBO(70, 20, 90, 0.4),
-                        Colors.white,
-                      ]),
+                  Color.fromRGBO(70, 20, 90, 0.4),
+                  Colors.white,
+                ]),
                 color: isSwitch ? Colors.teal.shade800 : Colors.redAccent,
                 borderRadius: BorderRadius.circular(20),
               ),
